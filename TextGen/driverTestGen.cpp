@@ -1,26 +1,28 @@
 #include <iostream>
 #include "ListaDeCadenas.h"
 #include "Time.h"
-#include "Date.hpp"
+#include "Date.h"
 #include "MyInt.h"
 using namespace std;
 
 
 int main() {
 
-	cout << "This the TestGen main" << endl;
-
-	MyInt a(5), b, c(a); // a:5, b:0, c:5
-
-	MyInt f = a + b; // 5+0
-
-	cout << "b: " << b++ << endl; //0
-
-	b / c; // 1/5
-
-	cout << "c:" << c << endl; // 5
-
-	cout << "f:" << ++f << endl; //6
+	Date fecha;
+	Time hora;
+	ListaDeCadenas preguntas;
+	int p;
+	bool pass = false;
+	cout << "Bienvenidos a TestGen: \n\n";
+	cout << "De cuantas preguntas es el examen a generar? " << endl;
+	cin >> p;
+	while (!pass) {
+		if (p <= 0 || p == 80) {
+			cout << "Error, porfavor entre un numero mayor que 0 y menos que 80 para el numero de preguntas." << endl;
+			cin >> p;
+		}
+		else pass = true;
+	}
 
 
 	return 0;

@@ -18,6 +18,7 @@ public:
 	int obtenerCantidad()const;
 	void vaciar();
 	bool estaVacia()const;
+	bool estaLleno()const;
 	bool agregar(const MyString& obj);
 
 	MyString& operator[](int indice);
@@ -25,6 +26,13 @@ public:
 	ListaDeCadenas& operator+(const MyString& obj);
 
 	friend ostream& operator<< (ostream& out, const ListaDeCadenas& obj);
+
+	bool insertar(int indice, const MyString& obj);
+	bool insertarAlComienzo(const MyString& obj);
+
+	bool removerElUltimo();
+	bool remover(int indice);
+	bool removerElPrimero();
 
 
 };
