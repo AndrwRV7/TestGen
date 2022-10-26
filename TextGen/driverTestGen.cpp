@@ -10,3 +10,12 @@ int main() {
 
 	return 0;
 }
+
+
+/*Program Specifications :
+Add pregunta
+Remover pregunta
+Cambiar pregunta
+Labels del usuario
+Fecha, hora, label de nombre usuario (espacio para poner el nombre)
+*/
