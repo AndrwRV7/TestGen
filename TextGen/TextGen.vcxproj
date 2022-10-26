@@ -128,13 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Date.hpp" />
     <ClInclude Include="ListaDeCadenas.h" />
+    <ClInclude Include="MyInt.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="driverTestGen.cpp" />
     <ClCompile Include="ListaDeCadenas.cpp" />
+    <ClCompile Include="MyInt.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
