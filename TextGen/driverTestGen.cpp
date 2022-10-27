@@ -152,15 +152,6 @@ int main() {
 	return 0;
 }
 
-
-/*Program Specifications :
-Add pregunta
-Remover pregunta
-Cambiar pregunta
-Labels del usuario
-Fecha, hora, label de nombre usuario (espacio para poner el nombre)
-*/
-
 void displayInfo(ListaDeCadenas preguntas, Date fecha, Time hora, MyString nameL, MyString idL, MyString fechaL, MyString horaL,MyString tOD) {
 	cout << "\n\t\tExamen Generado: \n\n";
 	cout << nameL << ":_______________________ \t\t" << idL << ":_________________\n";
