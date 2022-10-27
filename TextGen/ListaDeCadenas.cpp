@@ -34,7 +34,7 @@ void ListaDeCadenas::vaciar()
 
 bool ListaDeCadenas::estaVacia() const
 {
-	return (this->cantidad >= 0);
+	return (this->cantidad <= 0);
 }
 
 bool ListaDeCadenas::estaLleno() const
