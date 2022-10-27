@@ -80,7 +80,7 @@ int Time::toseconds() const
 
 void Time::display()const
 {
-	cout << "The time chosen time is: \n" << getHours() << ':' << getMinutes() << ':' << getSeconds() << endl;
+	cout << getHours() << ':' << getMinutes() << ':' << getSeconds() << endl;
 }
 
 bool Time::operator==(const Time& obj) const
@@ -102,4 +102,29 @@ bool Time::operator>(const Time& obj) const
 bool Time::operator<(const Time& obj) const
 {
 	return(this->getTime() < obj.getTime());
+}
+
+ostream& operator<<(ostream& out, const Time& obj)
+{
+	obj.display();
+	return out;
+	// TODO: insert return statement here
+}
+
+istream& operator>>(istream& in, Time& obj)
+{
+	bool pass = false;
+	while (!pass) {
+		cout << "Hora: ";
+		cin >> obj.hours;
+		cout << "Minutos: ";
+		cin >> obj.minutes;
+		cout << "Segundos: ";
+		cin >> obj.seconds;
+
+		if (obj.seconds < 0 || obj.minutes < 0 || obj.hours < 0 || obj.minutes > 59 || obj.hours > 12 || obj.seconds > 59)cout << "Hora invalida. Inserte denuevo.\n";
+		else pass = true;
+
+	}
+	return in;
 }

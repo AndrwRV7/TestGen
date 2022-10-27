@@ -27,5 +27,7 @@ public:
 	bool operator!=(const Time& obj)const;
 	bool operator>(const Time& obj)const;
 	bool operator<(const Time& obj)const;
+	friend ostream& operator<< (ostream&, const Time&);
+	friend istream& operator>> (istream&, Time&);
 
 };

@@ -122,10 +122,8 @@ ostream& operator<<(ostream& out, const ListaDeCadenas& obj)
 {
 	if (obj.cantidad > 0)
 	{
-		out << "Cantidad de cadenas en la lista: " << obj.cantidad << endl << endl;
-		out << "Lista de cadenas" << endl;
 		for (int i = 0; i < obj.cantidad; i++) {
-			cout << "\t" << obj[i] << endl;
+			cout << obj[i] << endl;
 		}
 	}
 	else

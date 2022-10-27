@@ -1,4 +1,4 @@
-#include "Date.hpp"
+#include "Date.h"
 #include<iostream>
 using namespace::std;
 
@@ -6,7 +6,7 @@ const int Date::days[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 Date::Date() {
     month = 0;
     day = 0;
-    year = 02;
+    year = 0;
 }
 Date::Date(int aMonth, int aDay, int aYear) {
     setMonth(aMonth);
@@ -20,9 +20,6 @@ Date::Date(const Date& aDate) {
     setYear(aDate.getYear());
 }
 Date::~Date() {
-    cout << "Destruyendo objeto\n";
-    displayDate();
-    system("pause");
 }
 //Mutators
 void Date::setMonth(int aMonth) {
@@ -45,7 +42,6 @@ int Date::getYear() const {
     return year;
 }
 void Date::displayDate() const {
-    cout<<"Fecha: ";
     cout << getMonth() << "/" << getDay() << "/" << getYear() << endl;
 }
 // determine whether the day is the last day of the month
@@ -105,23 +101,27 @@ bool Date::operator==(const Date& obj) {
 }
 ostream& operator << (ostream& strm, const Date& obj)
 {
-    strm << "Date\n";
-    strm << "Month: " << obj.getMonth() << endl;
-    strm << "Day: " << obj.getDay() << endl;
-    strm << "Year: " << obj.getYear() << endl;
+    
+    /*strm << "Mes: " << obj.getMonth() << endl;
+    strm << "Día: " << obj.getDay() << endl;
+    strm << "Año: " << obj.getYear() << endl;*/
     
     strm << obj.getMonth()<<"/"<<obj.getDay()<<"/"<<obj.getYear()<<endl;
     return strm;
 }
 istream& operator >> (istream& strm, Date& obj)
 {
-   
-    cout << "Month: ";
-    strm >> obj.month;
+    bool pass = false;
+    while (!pass) {
+        cout << "Month: ";
+        strm >> obj.month;
+        cout << "Day: ";
+        strm >> obj.day;
+        cout << "Year: ";
+        strm >> obj.year;
+        if (obj.month > 12 || obj.day > 31 || obj.day <= 0 || obj.month <= 0) cout << "Error, fecha invalida. Entre fecha denuevo.\n";
+        else pass = true;
+    }
     
-    cout << "Day: ";
-    strm >> obj.day;
-    cout << "Year: ";
-    strm >> obj.year;
     return strm;
 }
