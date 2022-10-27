@@ -106,7 +106,7 @@ ostream& operator << (ostream& strm, const Date& obj)
     strm << "Día: " << obj.getDay() << endl;
     strm << "Año: " << obj.getYear() << endl;*/
     
-    strm << obj.getMonth()<<"/"<<obj.getDay()<<"/"<<obj.getYear()<<endl;
+    strm << obj.getMonth()<<"/"<<obj.getDay()<<"/"<<obj.getYear();
     return strm;
 }
 istream& operator >> (istream& strm, Date& obj)

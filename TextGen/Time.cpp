@@ -80,7 +80,7 @@ int Time::toseconds() const
 
 void Time::display()const
 {
-	cout << getHours() << ':' << getMinutes() << ':' << getSeconds() << endl;
+	cout << getHours() << ':' << getMinutes() << ':' << getSeconds();
 }
 
 bool Time::operator==(const Time& obj) const

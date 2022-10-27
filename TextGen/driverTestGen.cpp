@@ -4,7 +4,7 @@
 #include "Date.h"
 #include "MyInt.h"
 using namespace std;
-
+void displayInfo(ListaDeCadenas,Date,Time,MyString,MyString,MyString,MyString,MyString);
 
 int main() {
 
@@ -13,6 +13,7 @@ int main() {
 	ListaDeCadenas preguntas;
 	int p;
 	bool pass = false;
+	MyString nameLabel, idLabel, dateLabel, timeLabel, timeOfDay;
 	cout << "Bienvenidos a TestGen: \n\n";
 	cout << "De cuantas preguntas es el examen a generar? " << endl;
 	cin >> p;
@@ -23,6 +24,14 @@ int main() {
 		}
 		else pass = true;
 	}
+	cout << "Inserte el encabezado deseado para el nombre del estudiante: ";
+	cin >> nameLabel;
+	cout << "Inserte el encabezado deseado para la fecha: ";
+	cin >> dateLabel;
+	cout << "Inserte el encabezado deseado para el numero de estudiante: ";
+	cin >> idLabel;
+	cout << "Inserte el encabezado deseado para la hora: ";
+	cin >> timeLabel;
 	MyString preg;
 	for (int i = 0; i < p; i++) {
 		cout << "Inserte la pregunta #" << i + 1 << endl;
@@ -33,9 +42,16 @@ int main() {
 	cin >> fecha;
 	cout << "Inserte la hora del examen: \n";
 	cin >> hora;
-	cout << fecha;
+	cout << "Es am o pm? ";
+	cin >> timeOfDay;
+	displayInfo(preguntas, fecha, hora, nameLabel, idLabel, dateLabel, timeLabel, timeOfDay);
+	/*cout << fecha;
 	cout << hora;
-	cout << preguntas;
+	cout << "Preguntas:" << endl;
+	for (int i = 0; i < p; i++) {
+		cout << "\t" << i + 1 << ".";
+		cout << preguntas[i] << endl << endl;
+	}*/
 
 
 
@@ -50,3 +66,17 @@ Cambiar pregunta
 Labels del usuario
 Fecha, hora, label de nombre usuario (espacio para poner el nombre)
 */
+
+void displayInfo(ListaDeCadenas preguntas, Date fecha, Time hora, MyString nameL, MyString idL, MyString fechaL, MyString horaL,MyString tOD) {
+	cout << "\n\t\tExamen Generado: \n\n";
+	cout << nameL << ":_______________________ \t\t" << idL << ":_________________\n";
+	cout << fechaL << ": " << fecha << "\t\t\t";
+	cout << horaL << ": " << hora << " " << tOD << endl;
+	cout << "Preguntas:" << endl;
+	for (int i = 0; i < preguntas.obtenerCantidad(); i++) {
+		cout << "\t" << i + 1 << ".";
+		cout << preguntas[i] << "? " << endl << endl;
+	}
+
+
+}
